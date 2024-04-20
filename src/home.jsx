@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 function Home() {
 
     return (
@@ -1926,7 +1924,7 @@ function Home() {
         </section>
         {/* carousel-1 */}
 
-{/* banner-2 */}
+  {/* banner-2 */}
     <section className="py-3">
       <div className="mx-lg-5 p-4 d-flex align-items-center justify-content-evenly flex-wrap" style={{
             backgroundColor: '#78efbf',
@@ -1995,43 +1993,134 @@ function Home() {
         <div className="container-md">
           <div className="text-center py-3">
             <h3 className="mb-0 h3 fw-bold">Featured Products</h3>
-            <p className="mb-0 text-capitalize">The purpose of lorem ipsum</p>
+            {/* <p className="mb-0 text-capitalize">The purpose of lorem ipsum</p> */}
           </div>
           
-          <div className="product-thumbs">
-             
-               <div className="card">
-                <div className="position-relative overflow-hidden">
-                  <div className="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0 d-none">
-                    <a href="javascript:;"><i className="bi bi-heart"></i></a>
-                    <a href="javascript:;"><i className="bi bi-basket3"></i></a>
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i className="bi bi-zoom-in"></i></a>
-                  </div>
-                  <a href="/product/all_product/<%=product.category%>">
-                    <img src="/src/assets/front_assets/images/unveil the latest/Casual.png" className="card-img-top" alt="..." />
-                  </a>
-                </div>
-                <div className="card-body">
-                  <div className="product-info text-center">
-                    <h6 className="mb-1 fw-bold product-name">
-                     product name
-                    </h6>
-                    <div className="ratings mb-1 h6">
-                      <i className="bi bi-star-fill text-warning"></i>
-                      <i className="bi bi-star-fill text-warning"></i>
-                      <i className="bi bi-star-fill text-warning"></i>
-                      <i className="bi bi-star-fill text-warning"></i>
-                      <i className="bi bi-star-fill text-warning"></i>
-                    </div>
-                   
-                    <span className="mb-0 h6 fw-bold product-price">৳.77
-                    </span>
-                          
-                  </div>
-                </div>
-              </div>
+           <div className="border mt-4">
+                        <div className="owl-carousel owl-theme ">
+                         
+                                <div className="card">
 
-          </div>
+                                    <div className="item child" style={{position: 'relative'}}>
+                                        <a href="">
+                                        <img src="" alt="not available" height="aut0" width="100" />
+                                        </a>
+
+                                        <div className="hover-content d-none" style={{position: 'absolute', top:'70%' ,left:'31%'}}>
+                                            <a className="btn btn-sm  btn-dark"><i className="bi bi-basket3 liveToastBtnbtn"></i></a>
+                                            <a href="" data-bs-toggle="modal" data-bs-target="" className="d-none btn btn-sm btn-dark"><i className="bi bi-zoom-in"></i></a>
+                                            <a href="/billing1/<%=product.id%>" className="btn btn-sm btn-dark">
+                                              <i className="bi bi-telephone-fill"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div className="card-body">
+                                        <div className="product-info text-center">
+                                            <h6 className="mb-1 fw-bold product-name">
+                                              <span>product name</span>              
+                                            </h6>
+                                            <div className="ratings mb-1 h6">
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                              <span className="mb-0 h6 fw-bold product-price">৳
+                                                  5756
+                                              </span>
+                                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="card">
+
+
+                                    <div className="item child" style={{position: 'relative'}}>
+                                        <a href="">
+                                           
+                                                <img src="" alt="not available" height="aut0" width="100" />
+                                               
+                                        </a>
+
+                                        <div className="hover-content d-none" style={{position: 'absolute', top:'70%' ,left:'31%'}}>
+                                           
+
+                                            <a className="btn btn-sm  btn-dark"><i className="bi bi-basket3 liveToastBtnbtn"></i></a>
+                                            <a href="" data-bs-toggle="modal" data-bs-target="" className="d-none btn btn-sm btn-dark"><i className="bi bi-zoom-in"></i></a>
+                                            <a href="/billing1/<%=product.id%>" className="btn btn-sm btn-dark">
+                                                <i className="bi bi-telephone-fill"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div className="card-body">
+                                        <div className="product-info text-center">
+                                            <h6 className="mb-1 fw-bold product-name">
+                                              <span>product name</span>
+
+                                                              
+                                            </h6>
+                                            <div className="ratings mb-1 h6">
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                            </div>
+
+                                           
+                                                            <span className="mb-0 h6 fw-bold product-price">৳
+                                                               5756
+                                                            </span>
+                                                            
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                  <div className="card">
+
+                                    <div className="item child" style={{position: 'relative'}}>
+                                        <a href="">
+                                        <img src="" alt="not available" height="aut0" width="100" />
+                                        </a>
+
+                                        <div className="hover-content d-none" style={{position: 'absolute', top:'70%' ,left:'31%'}}>
+                                            <a className="btn btn-sm  btn-dark"><i className="bi bi-basket3 liveToastBtnbtn"></i></a>
+                                            <a href="" data-bs-toggle="modal" data-bs-target="" className="d-none btn btn-sm btn-dark"><i className="bi bi-zoom-in"></i></a>
+                                            <a href="/billing1/<%=product.id%>" className="btn btn-sm btn-dark">
+                                              <i className="bi bi-telephone-fill"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div className="card-body">
+                                        <div className="product-info text-center">
+                                            <h6 className="mb-1 fw-bold product-name">
+                                              <span>product name</span>              
+                                            </h6>
+                                            <div className="ratings mb-1 h6">
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                                <i className="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                              <span className="mb-0 h6 fw-bold product-price">৳
+                                                  5756
+                                              </span>
+                                                            
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
         </div>
 
         <div className="my-2 mx-3 mt-5">
