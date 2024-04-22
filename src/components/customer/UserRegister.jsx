@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Navbar from '../home/Navbar';
+import Footer from '../home/Footer';
 
 function UserRegister(props) {
     // State variables to hold form data
@@ -19,10 +21,15 @@ function UserRegister(props) {
        const handleSubmit = (event) => {
         event.preventDefault(); // Prevent default form submission behavior
         // Logic to handle form submission, e.g., sending data to server
-        console.log("allRegister data", registerData)
+        console.log("allRegister data", registerData);
     };
 
 return (
+
+
+ <div>
+
+
  <div className="page-content">
     {/* <!--start breadcrumb--> */}
     <div className="py-4 border-bottom">
@@ -118,6 +125,9 @@ return (
 
 
   </div>
+
+
+   </div>
     );
 }
 

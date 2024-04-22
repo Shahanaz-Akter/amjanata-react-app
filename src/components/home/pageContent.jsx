@@ -1,6 +1,6 @@
 import React from 'react';
-import FeaturedProduct from './featuredProduct';
-import TrendyProduct from './trendyProduct';
+import FeaturedProduct from './FeaturedProduct';
+import TrendyProduct from './TrendyProduct';
 
 const PageContent = () => {
     return (

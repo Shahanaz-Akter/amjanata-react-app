@@ -1,10 +1,10 @@
 
 
 import { useState } from "react";
-import Navbar from "./navbar";
-import CategoriesNavbar from "./categoriesNavbar";
-import PageContent from "./pageContent";
-import Footer from "./footer";
+import Navbar from "./Navbar";
+import CategoriesNavbar from "./CategoriesNavbar";
+import PageContent from "./PageContent";
+import Footer from "./Footer";
 
 function Home(){
     return (
