@@ -7,24 +7,24 @@ const CategoriesNavbar = () => {
         <section className="container mx-auto topProductNavbar d-lg-block d-lg-flex d-md-none d-none d-sm-none">
             {/* Grocery  */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/src/assets/front_assets/img/Category/Category 1.png" />
                 <p className="Nav_Text" style={{paddingTop: '5px'}}>Grocery</p>
             </a>
             </div>
             {/* Mobiles */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 2.png" />
                 <p className="Nav_Text" style={{paddingTop: '5px'}}>Mobiles</p>
             </a>
             </div>
             {/* Fashion  */}
             <div className="topProductNavbar_Nav">
-            <a href=""  style={{textDecoration: 'none'}}>
+            <a href=""  style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 3.png" />
                 <br />
-                <a href="" className="Navlink angledownIcon" style={{textDecoration: 'none'}}>
+                <a href="" className="Navlink angledownIcon" style={{color: 'black',textDecoration: 'none'}}>
                 Fashion
                 <i className="fa-solid fa-angle-down submenuicon"> </i>
 
@@ -391,11 +391,11 @@ const CategoriesNavbar = () => {
             </div>
             {/* Electronics */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 4.png" />
 
                 <br />
-                <a href="#" className="Navlink angledownIcon" style={{textDecoration: 'none'}}>
+                <a href="#" className="Navlink angledownIcon" style={{color: 'black',textDecoration: 'none'}}>
                 Electronics
                 <i className="fa-solid fa-angle-down submenuicon"> </i>
 
@@ -789,11 +789,11 @@ const CategoriesNavbar = () => {
             </div>
         {/* Home & Furniture  */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 5.png" />
 
                 <br />
-                <a href="#" className="Navlink angledownIcon" style={{textDecoration: 'none'}}>
+                <a href="#" className="Navlink angledownIcon" style={{color: 'black',textDecoration: 'none'}}>
                 Home & Furniture
                 <i className="fa-solid fa-angle-down submenuicon"> </i>
 
@@ -1179,25 +1179,25 @@ const CategoriesNavbar = () => {
             </div>
         {/* Health */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 6.png" />
                 <p className="Nav_Text" style={{paddingTop: '5px'}}>Health</p>
             </a>
             </div>
         {/* Games   */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 7.png" />
                 <p className="Nav_Text" style={{paddingTop: '5px'}}>Video Games</p>
             </a>
             </div>
         {/* Beauty & toys   */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 8.png" />
 
                 <br />
-                <a href="#" className="Navlink angledownIcon" style={{textDecoration: 'none'}}>
+                <a href="#" className="Navlink angledownIcon" style={{color: 'black',textDecoration: 'none'}}>
                 Beauty & Toys
                 <i className="fa-solid fa-angle-down submenuicon"> </i>
 
@@ -1715,11 +1715,11 @@ const CategoriesNavbar = () => {
             </div>
                 {/* Gift Cards */}
             <div className="topProductNavbar_Nav">
-            <a href="" style={{textDecoration: 'none'}}>
+            <a href="" style={{color: 'black',textDecoration: 'none'}}>
                 <img src="/Category/Category 9.png" />
 
                 <br />
-                <a href="" className="Navlink angledownIcon" style={{textDecoration: 'none'}}> 
+                <a href="" className="Navlink angledownIcon" style={{color: 'black',textDecoration: 'none'}}> 
                 Gift Cards
                 <i className="fa-solid fa-angle-down submenuicon"> </i>
 

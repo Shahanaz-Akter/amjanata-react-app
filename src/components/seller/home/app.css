@@ -1,3 +1,19 @@
+body .cell {
+    padding: 0px 0px 0px 30px;
+}
+
+.sd-bar {
+    --bar: linear-gradient(#9acba0 100%, transparent);
+    border-bottom-left-radius: 10px;
+    border-color: #9acba0;
+}
+
+.sd-graph {
+    --_x-grid-line-color: #9acba0;
+    --_y-grid-line-color: #9acba0;
+}
+
+
 .tab {
     display: flex;
     justify-content: space-around;
@@ -9,55 +25,44 @@
     width: 100%;
 }
 
-#seller_picture {
-    display: none;
+table {
+    border-collapse: collapse;
+    /* border: 2px solid rgb(200, 200, 200); */
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
 }
 
-.picture {
-    /* width: 400px; */
-    aspect-ratio: 16/9;
-    background: #f9fff9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
-    border: 2px dashed #3bb44a;
-    cursor: pointer;
-    font-family: sans-serif;
-    transition: color 300ms ease-in-out, background 300ms ease-in-out;
-    outline: none;
-    overflow: hidden;
-    border-radius: 10px;
+td {
+    /* border: 1px solid rgb(190, 190, 190); */
+    padding: 10px 20px;
+    background-color: #9acba070;
+    color: black;
 }
 
-.picture:hover {
-    color: #777;
-    background: #f9fff9;
+th {
+    background-color: #464748;
+    color: #fff;
 }
 
-.picture:active {
-    border-color: turquoise;
-    color: turquoise;
-    background: #eee;
+table th:first-child {
+    border-top-left-radius: 10px;
 }
 
-.picture:focus {
-    color: #f9fff9;
-    /* background: #F9FFF9; */
-    box-shadow: 0 0 10px rgba(92, 248, 95, 0.525);
+table th:last-child {
+    border-top-right-radius: 10px;
 }
 
-.picture__img {
-    max-width: 100%;
+caption {
+    padding: 10px;
 }
 
 /* sidebar css  */
-
 .sidebar {
     position: fixed;
     top: 0;
     left: -250px;
-    /* Hide the sidebar initially */
     width: 250px;
     height: 100%;
     background-color: #ffffff;
@@ -71,17 +76,13 @@
     padding: 0;
 }
 
-
-
 .sidebar ul li a {
     color: #464748;
     text-decoration: none;
-    /* background-color: red; */
     display: inline-block;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* border: 1px solid black; */
     border-bottom: 1px solid #80808040;
     padding-left: 20px;
 }

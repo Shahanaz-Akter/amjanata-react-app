@@ -29,7 +29,7 @@ return (
 
  <div>
 
-
+<Navbar/>
  <div className="page-content">
     {/* <!--start breadcrumb--> */}
     <div className="py-4 border-bottom">
@@ -126,7 +126,12 @@ return (
 
   </div>
 
-
+ <div>
+        <a href="">
+              <img className="d-flex justify-content-center mx-auto my-0"  style={{width: '200px'}} src="/amjanata.png" alt="" />
+        </a>
+        </div>
+<Footer/>
    </div>
     );
 }

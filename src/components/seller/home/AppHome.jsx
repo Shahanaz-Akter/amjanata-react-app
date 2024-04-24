@@ -1,22 +1,7 @@
-import React, { useState } from 'react';
-import "./information.css";
-const Information = () => {
-
-{/* <script>
-        const threeBar = document.getElementById("threeBar");
-        const sidebar = document.querySelector(".sidebar");
-
-        threeBar.addEventListener("click", function () {
-            sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
-        });
-
-        const closeSideBar = () => {
-            sidebar.style.left = sidebar.style.left === "-250px" ? "0px" : "-250px";
-        };
-    </script> */}
-
-
-
+import React, { useEffect, useState } from 'react';
+import "./app.css";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+const AppHome = () => {
 
 const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -38,12 +23,17 @@ const [sidebarOpen, setSidebarOpen] = useState(false);
 };
 
 
-return (
-      
-<div className="position-relative" style={{height: '100vh'}}>
+const data = [
+        { name: '1', points: 15 },
+        { name: '2', points: 9 },
+        { name: '3', points: 25 },
+        { name: '4', points: 18 },
+    ];
+
+    return (
+        <div>
     {/* <!--start top header--> */}
     <header className="top-header">
-
         <nav className="navbar navbar-expand-md w-100 navbar-dark container gap-3">
             <h3 className="fw-bold ms-2 mt-1" style={{marginBottom: '0px', padding: '5px', cursor: 'pointer'}}   id="threeBar"  onClick={toggleSidebar}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15" viewBox="0 0 21 15" fill="none">
@@ -74,7 +64,6 @@ return (
                 </li>
             </ul>
         </nav>
-
       {/* <div className={sidebarOpen ? 'sidebar open' : 'sidebar'}> */}
       <div style={sidebarStyle}>
         <div className="d-flex justify-content-end align-items-center" style={{ height: '50px', boxSizing: 'border-box', boxShadow: '-2px 1px 4px gray' }}>
@@ -86,55 +75,81 @@ return (
           </h3>
         </div>
        
-            <ul>
-                <li><a href="/seller/app_home"   style={{color: 'black', textDecoration: 'none'}}>Home</a></li>
-                <li><a href="/seller/info"  style={{color: 'black', textDecoration: 'none'}}>Add Info</a></li>
-                <li><a href="/seller/product_list"  style={{color: 'black', textDecoration: 'none'}}>Product</a></li>
-                <li><a href="/seller/advice"  style={{color: 'black', textDecoration: 'none'}}>Advice</a></li>
-                <li><a href="/seller/order_list"  style={{color: 'black', textDecoration: 'none'}}>Order List</a></li>
-                <li><a href="/seller/sales_payment"  style={{color: 'black', textDecoration: 'none'}}>Sales Payment</a></li>
+            <ul className=''>
+                <li><a href="/seller/app_home"   style={{color: 'black', textDecoration: 'none'}} >Home</a></li>
+                <li><a href="/seller/info"  style={{color: 'black', textDecoration: 'none'}} >Add Info</a></li>
+                <li><a href="/seller/product_list"  style={{color: 'black', textDecoration: 'none'}} >Product</a></li>
+                <li><a href="/seller/advice"  style={{color: 'black', textDecoration: 'none'}} >Advice</a></li>
+                <li><a href="/seller/order_list"  style={{color: 'black', textDecoration: 'none'}} >Order List</a></li>
+                <li><a href="/seller/sales_payment"  style={{color: 'black', textDecoration: 'none'}} >Sales Payment</a></li>
             </ul>
         </div>
-   
     </header>
     {/* <!--end top header--> */}
 
-    <div className="mx-3" style={{marginTop: '6rem', marginBottom: '130px'}}>
-        <h3 className="text-center">Information</h3>
+    <div className="mx-3" style={{marginBottom: '130px'}}>
+        <div className="my-3">
+            <a href="/seller/product_upload" className="btn w-100 p-2 mt-3 btn text-light" style={{backgroundColor: '#3bb44a'}}>
+                ADD PRODUCT
+            </a>
+        </div>
 
-        <form action="/seller/post_information/<%=param_id%>" encType="multipart/form-data" method="post">
+        <table className="mt-4">
+            <tr>
+                <th>
+                    Gross <br />
+                    Products
+                </th>
+                <th className="">
+                    Sold <br />
+                    Item
+                </th>
+            </tr>
+            <tr>
+                <td style={{borderRight: '1px solid rgb(190, 190, 190)', borderBottomLeftRadius: '10px'}}>
+                    12
+                </td>
+                <td style={{borderBottomRightRadius: '10px'}}>08</td>
+            </tr>
+        </table>
 
-            <label className="picture" htmlFor="seller_picture" tabIndex="0">
-                <span className="picture__image"><svg xmlns="http://www.w3.org/2000/svg" width="139" height="140" viewBox="0 0 139 140" fill="none">
-                        <path
-                            d="M101.467 138.817H30.9221C26.3112 138.817 24.0057 138.817 22.9381 137.905C22.0118 137.114 21.5202 135.927 21.6158 134.713C21.726 133.313 23.3562 131.683 26.6166 128.422L91.3335 63.7054C94.3475 60.6913 95.8547 59.1842 97.5925 58.6196C99.1211 58.1229 100.768 58.1229 102.296 58.6196C104.034 59.1842 105.541 60.6913 108.555 63.7054L134.251 89.401C135.635 90.7846 136.326 91.4764 136.821 92.2837C137.26 92.9995 137.583 93.7798 137.779 94.5961C138 95.5168 138 96.4952 138 98.4519V102.283M101.467 138.817C114.255 138.817 120.648 138.817 125.533 136.328C129.829 134.139 133.322 130.646 135.511 126.349C138 121.465 138 115.071 138 102.283M101.467 138.817H37.5333C24.7455 138.817 18.3515 138.817 13.4672 136.328C9.17085 134.139 5.67779 130.646 3.48868 126.349C1 121.465 1 115.071 1 102.283V38.35C1 25.5621 1 19.1682 3.48868 14.2839C5.67779 9.9875 9.17085 6.49444 13.4672 4.30533C18.3515 1.81665 24.7455 1.81665 37.5333 1.81665H101.467C114.255 1.81665 120.648 1.81665 125.533 4.30533C129.829 6.49444 133.322 9.9875 135.511 14.2839C138 19.1682 138 25.5621 138 38.35V102.283M58.0833 43.6778C58.0833 52.0848 51.2681 58.9 42.8611 58.9C34.4541 58.9 27.6389 52.0848 27.6389 43.6778C27.6389 35.2708 34.4541 28.4555 42.8611 28.4555C51.2681 28.4555 58.0833 35.2708 58.0833 43.6778Z"
-                            stroke="#464748" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </span>
-            </label>
+        <div>
+            <h2 className="mb-4 mt-5 text-center">Sales Details</h2>
+            <div className="cell mb-5">
 
-            <input type="file" name="seller_picture" id="seller_picture" />
+                 <ResponsiveContainer width="100%" height={400}>
+                            <BarChart data={data}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="points" fill="#9ACBA0" />
+                            </BarChart>
+                </ResponsiveContainer>
 
-            <label className="mt-3" htmlFor="store_name">Store Name:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="store_name" name="store_name" autoComplete="off" placeholder="" required />
-            <br />
-            <label className="mt-3" htmlFor="user_name">User Name:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="user_name" name="seller_user_name" autoComplete="off" placeholder="" required />
-            <br />
-            <label className="mt-3" htmlFor="business_type">Business Type:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="business_type" name="business_type" autoComplete="off" placeholder="" required />
-            <br />
-            <label className="mt-3" htmlFor="address">Address:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="address" name="address" autoComplete="off" placeholder="" required />
-            <div>
-                <button type="submit" className="w-100 p-2 mt-3 btn text-light" style={{backgroundColor: '#3bb44a'}}>
-                    Submit
-                </button>
+                {/* <div id="chart2" ref={chartRef}></div> */}
             </div>
-        </form>
-    </div>
+        </div>
 
-    
+        <div className="d-flex rounded mt-3 p-2" style={{backgroundColor: '#f9fff9',boxShadow: '0 10px 16px 0 #d1edd5, 0 6px 20px 0 #d1edd5'}}>
+            <img src=""  style={{height: '100px'}} />
+            <div className="ps-3">
+                <p style={{marginBottom: '0px'}}>Product Name:
+                </p>
+                <p style={{marginBottom: '0px'}}>Order Id: 
+                </p>
+                <p style={{marginBottom: '0px'}}>Customer Name: null
+                </p>
+                <p style={{marginBottom: '0px'}}>Address: null
+                </p>
+                <p style={{marginBottom: '0px'}}>Order Date: 
+                </p>
+
+            </div>
+        </div>
+
+    </div>
 
     {/* <!-- start Footer  --> */}
     <div className="tab shadow-lg">
@@ -189,4 +204,4 @@ return (
     );
 };
 
-export default Information;
+export default AppHome;

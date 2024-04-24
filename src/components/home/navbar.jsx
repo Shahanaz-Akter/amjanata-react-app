@@ -1,9 +1,35 @@
 
 
-// import { useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 function Navbar(){
-    
+     const [defaultMenuOpen, setDefaultMenuOpen] = useState(false);
+    const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+
+     useEffect(() => {
+        const handleBodyClick = (event) => {
+            if (!event.target.closest('.default-menu') && !event.target.classList.contains('btn-default') && !event.target.classList.contains('cat-btn-default-1')) {
+                setDefaultMenuOpen(false);
+                setCategoryDropdownOpen(false);
+            }
+        };
+
+        document.body.addEventListener('click', handleBodyClick);
+
+        return () => {
+            document.body.removeEventListener('click', handleBodyClick);
+        };
+    }, []);
+
+    const toggleDefaultMenu = () => {
+        setDefaultMenuOpen(!defaultMenuOpen);
+    };
+
+    const toggleCategoryDropdown = () => {
+        setCategoryDropdownOpen(!categoryDropdownOpen);
+        // console.log(!categoryDropdownOpen);
+    };
+
     return (
         <div>
         {/* start top header */}
@@ -26,7 +52,7 @@ function Navbar(){
               <img src="/amjanata.png" className="logo-img" alt="" />
             </a>
 
-           <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+           <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar">
 
               <div className="offcanvas-header justify-content-end">
                 <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -37,15 +63,20 @@ function Navbar(){
                   <li className="mx-auto search w-100 me-1" style={{listStyle: 'none'}}>
                     <div className="d-flex align-items-center justify-content-between w-100">
 
-
                       <div className="dropdown mx-1 nav-item">
-                        <a className="categories btn cat-btn-default-1 dropdown-toggle px-1" type="button" id="catDropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style={{fontSize: 'small', padding: '7px 0px'}}>
+
+                        <a className="categories btn cat-btn-default-1 dropdown-toggle px-1" onClick={toggleCategoryDropdown}  type="button" id="catDropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style={{fontSize: 'small', padding: '7px 0px'}}>
                           Categories
                         </a>
-                        <ul className="c-dropdown-menu dropdown-menu px-2" aria-labelledby="catDropdownMenu1" style={{display: 'none'}}>
+
+                        {/* <ul className="c-dropdown-menu dropdown-menu px-2" aria-labelledby="catDropdownMenu1" style={{display: 'none'}}> */}
+                      <ul className="c-dropdown-menu dropdown-menu px-2" style={{ display: categoryDropdownOpen ? 'block' : 'none' }}>
+
                         <li>list1</li>
                         <li>list2</li>
+
                         </ul>
+
                       </div>
 
                       <form className="categories rounded-3 w-100 d-flex" style={{width: '255px', borderRadius: '15px'}}>
@@ -71,11 +102,13 @@ function Navbar(){
            <ul className="navbar-nav secondary-menu flex-row">
 
               <li className="dropdown mx-1 hov nav-item d-none d-md-none d-lg-block nic-1030">
-                <a className="btn btn-default " type="button" id="dropdownMenuLogin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style={{fontSize: '15px',padding: '7px 0'}}><i className="bi bi-person-circle me-2"></i>Login
+                <a className="btn btn-default " type="button" id="dropdownMenuLogin" data-toggle="dropdown"  onClick={toggleDefaultMenu}  aria-haspopup="true" aria-expanded="true" style={{fontSize: '15px',padding: '7px 0'}}><i className="bi bi-person-circle me-2"></i>
+                    Login
                   <i className="fa-solid fa-angle-down submenuicon"> </i>
                 </a>
 
-                <ul className="shadow dropdown-menu list default-menu px-2 text-dark" aria-labelledby="dropdownMenuLogin">
+                {/* <ul className="shadow dropdown-menu list default-menu px-2 text-dark" aria-labelledby="dropdownMenuLogin"> */}
+                <ul className={`shadow dropdown-menu list default-menu px-2 text-dark ${defaultMenuOpen ? 'show' : ''}`}>
 
                   <li className="my-1 d-flex align-items-center justify-content-between gap-1 text-center">
                     <p style={{marginBottom: '0'}}>New Customer?</p> <a href="/customer/user_register" className="text-primary">Sign Up</a>
@@ -111,8 +144,8 @@ function Navbar(){
                 <a className="nav-link" style={{fontSize:'15px',fontWeight: '500'}} href="/seller/seller_register"><i className="bi bi-shop-window me-2"></i>Become a Seller</a>
               </li>
 
-
             </ul>
+
 
             <li className="d-lg-none d-md-none d-md-flex d-sm-block d-sm-flex d-xl-none mb-4 mx-auto search w-100 me-1" style={{listStyle: 'none'}}>
 
@@ -120,12 +153,14 @@ function Navbar(){
 
                 <div className="dropdown mx-1 nav-item">
 
-                  <a className="categories btn btn-default dropdown-toggle px-1" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style={{fontSize: 'small',padding: '7px 0'}}>
+                  <a className="categories btn btn-default dropdown-toggle px-1"  type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style={{fontSize: 'small',padding: '7px 0'}}>
                     Categories
                   </a>
+
                   <ul className="dropdown-menu default-menu px-2" aria-labelledby="dropdownMenu1">
                    <li>vbb</li>
                   </ul>
+
                 </div>
 
                 <form className="categories rounded-3 w-100 d-flex" style={{width: '255px',borderRadius: '15px'}}>

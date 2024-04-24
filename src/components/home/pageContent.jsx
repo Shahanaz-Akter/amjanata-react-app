@@ -2,6 +2,7 @@ import React from 'react';
 import FeaturedProduct from './FeaturedProduct';
 import TrendyProduct from './TrendyProduct';
 
+
 const PageContent = () => {
     return (
 
@@ -630,7 +631,7 @@ const PageContent = () => {
                   </a>
                 </div>
               </div>
-              <p className="text-center">Kitchen & Dinnig</p>
+              <p className="text-center">Kitchen & Dining</p>
             </div>
             <div className="col">
               <div className="p-0 border rounded-circle brand-box" style={{backgroundColor: '#fcf0e1'}}>
@@ -656,7 +657,7 @@ const PageContent = () => {
               <div className="p-0 border rounded-circle brand-box" style={{backgroundColor: '#fcf0e1'}}>
                 <div className="d-flex align-items-center">
                   <a href="">
-                    <img src="/src/front_assets/img/amjanata-pic-23/amjanata pic-33.png" className="img-fluid border-img" alt="" />
+                    <img src="/src/assets/front_assets/img/amjanata-pic-23/amjanata pic-33.png" className="img-fluid border-img" alt="" />
                   </a>
                 </div>
               </div>

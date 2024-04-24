@@ -8,12 +8,19 @@ import UserLogin from "../components/customer/UserLogin";
 import NumberVerification from "../components/seller/NumberVerification";
 import VerificationCode from "../components/seller/VerificationCode";
 import Information from "../components/seller/Information";
+import ProductUpload from "../components/seller/ProductUpload";
+import AppHome from "../components/seller/home/AppHome";
+import ProductList from "../components/seller/product/ProductList";
 
 const router=createBrowserRouter([
+
+    // Default route landing page
     {
         path: "/",
         element: <Home></Home>,
     },
+
+// others route
     {
         path: "/home",
         element: <Home></Home>,
@@ -35,8 +42,20 @@ const router=createBrowserRouter([
         path:"/seller/post_verification_code",
         element:<Information/>
     },
-    
-    
+   {
+        path:"/seller/product_upload",
+        element:<ProductUpload/>
+    },
+
+ {
+        path:"/seller/app_home",
+        element:<AppHome/>
+    },
+
+    {
+        path:"/seller/product_list",
+        element:<ProductList/>
+    },
     {
      path:"/product/cart",
         element:<Cart/>
@@ -51,8 +70,6 @@ const router=createBrowserRouter([
         element: <UserLogin />
     }
     
-    
-
     
 ]);
 

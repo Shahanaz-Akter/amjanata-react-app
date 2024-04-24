@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
-import "./information.css";
-const Information = () => {
+import "./product.css";
 
-{/* <script>
-        const threeBar = document.getElementById("threeBar");
-        const sidebar = document.querySelector(".sidebar");
+const ProductList = () => {
 
-        threeBar.addEventListener("click", function () {
-            sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
-        });
-
-        const closeSideBar = () => {
-            sidebar.style.left = sidebar.style.left === "-250px" ? "0px" : "-250px";
-        };
-    </script> */}
-
-
+      {/* <script>
+        let dropdownMenu = document.querySelector(' .dropdown-menu');
+        console.log(dropdownMenu);
+        </script> */}
 
 
 const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -38,12 +29,10 @@ const [sidebarOpen, setSidebarOpen] = useState(false);
 };
 
 
-return (
-      
-<div className="position-relative" style={{height: '100vh'}}>
+    return (
+        <div>
     {/* <!--start top header--> */}
     <header className="top-header">
-
         <nav className="navbar navbar-expand-md w-100 navbar-dark container gap-3">
             <h3 className="fw-bold ms-2 mt-1" style={{marginBottom: '0px', padding: '5px', cursor: 'pointer'}}   id="threeBar"  onClick={toggleSidebar}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15" viewBox="0 0 21 15" fill="none">
@@ -74,7 +63,6 @@ return (
                 </li>
             </ul>
         </nav>
-
       {/* <div className={sidebarOpen ? 'sidebar open' : 'sidebar'}> */}
       <div style={sidebarStyle}>
         <div className="d-flex justify-content-end align-items-center" style={{ height: '50px', boxSizing: 'border-box', boxShadow: '-2px 1px 4px gray' }}>
@@ -86,55 +74,87 @@ return (
           </h3>
         </div>
        
-            <ul>
-                <li><a href="/seller/app_home"   style={{color: 'black', textDecoration: 'none'}}>Home</a></li>
-                <li><a href="/seller/info"  style={{color: 'black', textDecoration: 'none'}}>Add Info</a></li>
-                <li><a href="/seller/product_list"  style={{color: 'black', textDecoration: 'none'}}>Product</a></li>
-                <li><a href="/seller/advice"  style={{color: 'black', textDecoration: 'none'}}>Advice</a></li>
-                <li><a href="/seller/order_list"  style={{color: 'black', textDecoration: 'none'}}>Order List</a></li>
-                <li><a href="/seller/sales_payment"  style={{color: 'black', textDecoration: 'none'}}>Sales Payment</a></li>
+            <ul className=''>
+                <li><a href="/seller/app_home"   style={{color: 'black', textDecoration: 'none'}} >Home</a></li>
+                <li><a href="/seller/info"  style={{color: 'black', textDecoration: 'none'}} >Add Info</a></li>
+                <li><a href="/seller/product_list"  style={{color: 'black', textDecoration: 'none'}} >Product</a></li>
+                <li><a href="/seller/advice"  style={{color: 'black', textDecoration: 'none'}} >Advice</a></li>
+                <li><a href="/seller/order_list"  style={{color: 'black', textDecoration: 'none'}} >Order List</a></li>
+                <li><a href="/seller/sales_payment"  style={{color: 'black', textDecoration: 'none'}} >Sales Payment</a></li>
             </ul>
         </div>
-   
     </header>
     {/* <!--end top header--> */}
 
-    <div className="mx-3" style={{marginTop: '6rem', marginBottom: '130px'}}>
-        <h3 className="text-center">Information</h3>
 
-        <form action="/seller/post_information/<%=param_id%>" encType="multipart/form-data" method="post">
+   <div className="mx-3" style={{paddingBottom: '120px'}}>
 
-            <label className="picture" htmlFor="seller_picture" tabIndex="0">
-                <span className="picture__image"><svg xmlns="http://www.w3.org/2000/svg" width="139" height="140" viewBox="0 0 139 140" fill="none">
-                        <path
-                            d="M101.467 138.817H30.9221C26.3112 138.817 24.0057 138.817 22.9381 137.905C22.0118 137.114 21.5202 135.927 21.6158 134.713C21.726 133.313 23.3562 131.683 26.6166 128.422L91.3335 63.7054C94.3475 60.6913 95.8547 59.1842 97.5925 58.6196C99.1211 58.1229 100.768 58.1229 102.296 58.6196C104.034 59.1842 105.541 60.6913 108.555 63.7054L134.251 89.401C135.635 90.7846 136.326 91.4764 136.821 92.2837C137.26 92.9995 137.583 93.7798 137.779 94.5961C138 95.5168 138 96.4952 138 98.4519V102.283M101.467 138.817C114.255 138.817 120.648 138.817 125.533 136.328C129.829 134.139 133.322 130.646 135.511 126.349C138 121.465 138 115.071 138 102.283M101.467 138.817H37.5333C24.7455 138.817 18.3515 138.817 13.4672 136.328C9.17085 134.139 5.67779 130.646 3.48868 126.349C1 121.465 1 115.071 1 102.283V38.35C1 25.5621 1 19.1682 3.48868 14.2839C5.67779 9.9875 9.17085 6.49444 13.4672 4.30533C18.3515 1.81665 24.7455 1.81665 37.5333 1.81665H101.467C114.255 1.81665 120.648 1.81665 125.533 4.30533C129.829 6.49444 133.322 9.9875 135.511 14.2839C138 19.1682 138 25.5621 138 38.35V102.283M58.0833 43.6778C58.0833 52.0848 51.2681 58.9 42.8611 58.9C34.4541 58.9 27.6389 52.0848 27.6389 43.6778C27.6389 35.2708 34.4541 28.4555 42.8611 28.4555C51.2681 28.4555 58.0833 35.2708 58.0833 43.6778Z"
-                            stroke="#464748" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </span>
-            </label>
+        <h2 className="my-4 text-center">Product List</h2>
 
-            <input type="file" name="seller_picture" id="seller_picture" />
+        <div style={{width: '100%', overflowY: 'auto'}}>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Image</th>
+                    <th>Product <br /> Name</th>
+                    <th>Selling <br /> Product</th>
+                    <th>Stock</th>
+                    <th>Discount</th>
+                    <th>Manage</th>
+                </tr>
 
-            <label className="mt-3" htmlFor="store_name">Store Name:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="store_name" name="store_name" autoComplete="off" placeholder="" required />
-            <br />
-            <label className="mt-3" htmlFor="user_name">User Name:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="user_name" name="seller_user_name" autoComplete="off" placeholder="" required />
-            <br />
-            <label className="mt-3" htmlFor="business_type">Business Type:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="business_type" name="business_type" autoComplete="off" placeholder="" required />
-            <br />
-            <label className="mt-3" htmlFor="address">Address:</label> <br />
-            <input style={{width: '100%'}} className="rounded border" type="text" id="address" name="address" autoComplete="off" placeholder="" required />
-            <div>
-                <button type="submit" className="w-100 p-2 mt-3 btn text-light" style={{backgroundColor: '#3bb44a'}}>
-                    Submit
-                </button>
-            </div>
-        </form>
+              
+                    <tr>
+                        <td>
+                          Product createdAt
+                        </td>
+
+                        <td><img src="" alt="Not available" height="100" width="100" /></td>
+                        <td>
+                           className
+                        </td>
+                        <td>
+                          selling_price
+                        </td>
+                        <td>
+                          total_qty
+                        </td>
+                        <td>
+                          discount
+                        </td>
+                        <td>
+                            <div className="btn-group mb-2">
+                                <div type="" className="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Action <i className="mdi mdi-chevron-down"></i>
+                                </div>
+                                <div className="dropdown-menu">
+                                    <a className="dropdown-item" href="/seller/edit_product/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+                                            <path
+                                                d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z" />
+                                        </svg>
+                                        <span className="ms-1">Edit</span>
+                                    </a>
+
+                                    <a className="dropdown-item" href="/seller/delete_product">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 448 512">
+                                            <path
+                                                d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z" />
+                                        </svg>
+
+                                        <span className="ms-1">Delete</span>
+                                    </a>
+                                </div>
+                            </div>
+                          
+                        </td>
+                    </tr>
+
+                   
+            </table>
+        </div>
+
     </div>
-
-    
 
     {/* <!-- start Footer  --> */}
     <div className="tab shadow-lg">
@@ -184,9 +204,8 @@ return (
         </a>
     </div>
     {/* <!-- end Footer  --> */}
-
         </div>
     );
 };
 
-export default Information;
+export default ProductList;

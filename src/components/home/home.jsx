@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import CategoriesNavbar from "./CategoriesNavbar";
 import PageContent from "./PageContent";
 import Footer from "./Footer";
+import "./pagecontent.css";
 
 function Home(){
     return (

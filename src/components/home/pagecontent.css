@@ -1,0 +1,34 @@
+.list {
+    width: 250px !important;
+    font-weight: 500 !important;
+}
+
+@media screen and (max-width: 576px) {
+    .size {
+        width: 50%;
+    }
+
+    /* .size1 {
+        width: 40%;
+      } */
+
+    .deals-text {
+        margin-bottom: 85px !important;
+    }
+
+    .deals {
+        height: 200px !important;
+        width: 100%;
+        max-width: 155px;
+    }
+
+    .deal {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    /* .deals-img {
+        width: 100%;
+
+      } */
+}
