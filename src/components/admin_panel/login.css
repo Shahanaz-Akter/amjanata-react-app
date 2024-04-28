@@ -1,0 +1,9 @@
+.select2-container--default .select2-selection--single {
+    background: #FCFCFC !important;
+    color: #444 !important;
+}
+
+.form-control {
+    background: #FCFCFC !important;
+    color: #444 !important;
+}

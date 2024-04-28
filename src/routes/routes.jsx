@@ -11,6 +11,7 @@ import Information from "../components/seller/Information";
 import ProductUpload from "../components/seller/ProductUpload";
 import AppHome from "../components/seller/home/AppHome";
 import ProductList from "../components/seller/product/ProductList";
+import AuthenticationLogin from "../components/admin_panel/AuthenticationLogin";
 
 const router=createBrowserRouter([
 
@@ -68,7 +69,13 @@ const router=createBrowserRouter([
     {
         path: "/customer/user_login",
         element: <UserLogin />
+    },
+    
+   {
+        path: "auth/login",
+        element: <AuthenticationLogin />
     }
+    
     
     
 ]);

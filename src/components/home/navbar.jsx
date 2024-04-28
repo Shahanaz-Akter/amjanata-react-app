@@ -21,6 +21,7 @@ function Navbar(){
         };
     }, []);
 
+    
     const toggleDefaultMenu = () => {
         setDefaultMenuOpen(!defaultMenuOpen);
     };
