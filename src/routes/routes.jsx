@@ -12,6 +12,7 @@ import ProductUpload from "../components/seller/ProductUpload";
 import AppHome from "../components/seller/home/AppHome";
 import ProductList from "../components/seller/product/ProductList";
 import AuthenticationLogin from "../components/admin_panel/AuthenticationLogin";
+import AuthenticationRegister from "../components/admin_panel/AuthenticationRegister";
 
 const router=createBrowserRouter([
 
@@ -74,8 +75,11 @@ const router=createBrowserRouter([
    {
         path: "auth/login",
         element: <AuthenticationLogin />
-    }
-    
+    },
+    {
+        path: "auth/register",
+        element: <AuthenticationRegister />
+    },
     
     
 ]);

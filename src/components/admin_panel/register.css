@@ -1,0 +1,4 @@
+/* checkbox background */
+.form-check-input:checked {
+    background: black;
+}

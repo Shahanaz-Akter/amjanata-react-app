@@ -2,7 +2,7 @@ import React from 'react';
 import "../admin_panel/login.css";
 const AuthenticationLogin = () => {
     return (
-        <>
+  <div className="loading  authentication-bg-pattern" style={{background:'whitesmoke'}}>
   <div className="account-pages my-5">
     <div className="container">
 
@@ -46,7 +46,7 @@ const AuthenticationLogin = () => {
           <div className="row mt-3 text-dark">
             <div className="col-12 text-center">
               <p> <a className="text-dark fw-bold ms-1" data-bs-toggle="modal" data-bs-target="#forget_password"><i className="fa fa-lock me-1"></i>Forgot your password?</a></p>
-              <p className="text-dark fw-bold">Don't have an account? <a href="/auth/register" className="text-dark ms-1"><b>Sign Up</b></a></p>
+              <p className="text-dark fw-bold">Do Not have an account? <a href="/auth/register" className="text-dark ms-1"><b>Sign Up</b></a></p>
             </div> 
             {/* <!-- end col --> */}
           </div>
@@ -139,7 +139,7 @@ const AuthenticationLogin = () => {
     </div>
      {/* end container */}
   </div>
-        </>
+  </div>
     );
 };
 
