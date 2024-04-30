@@ -1,13 +1,12 @@
 // API_URL it will be kike this Axios.post(API_URL, ....);
 
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 
 import axios from 'axios';
 import { API_URL } from '../../../utils/config';
-
+import Login from './AuthenticationLogin';
 function AuthenticationRegister() {
 
-  
 //   const _URL="http:localhost:8000";
 // console.log('API_URL: ',_URL);
 
@@ -17,7 +16,7 @@ function AuthenticationRegister() {
     'password': '',
     'role': '',
   });
-
+ const [showLogin, setShowLogin]=useState(false);
 
 
   // useEffect(()=>{
@@ -43,7 +42,6 @@ const handleInput=(e)=>{
 
 }
 
-
 const submitRegister = async (e) => {
 
     e.preventDefault(); // Prevent default form submission
@@ -51,8 +49,12 @@ const submitRegister = async (e) => {
 
       // Make POST request to server endpoint
       const response = await axios.post("http://192.168.0.108:8000/auth/post_register", formData);
-      console.log('Registration successful:', response.data);
+      console.log('Registration successful:', response);
        
+          if(response.data.message=='success'){
+               setShowLogin(true);
+          }
+
       // Clear form data
       setFormData({
         user_name: '',
@@ -60,6 +62,9 @@ const submitRegister = async (e) => {
         password: '',
         role: ''
       });
+
+
+
     } catch (error) {
       // Handle errors
       console.log('Registration failed:', error);
@@ -67,7 +72,11 @@ const submitRegister = async (e) => {
   }
 
   return (
-        <div>
+ <div>
+
+{/* <div>{showLogin && <Login/>}</div> */}
+
+
 <div className="account-pages mt-5 mb-5">
     <div className="container">
       <div className="row justify-content-center">
@@ -139,7 +148,8 @@ const submitRegister = async (e) => {
       </div>
     </div>
   </div>
-        </div>
+
+  </div>
     );
 }
 
